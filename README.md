@@ -2,7 +2,8 @@
 -------------
 1.Import database Recipes in Microsoft SQL Management Studio under localhost\SQLEXPRESS <br>
 ----------
-* link to Recipes database: https://drive.google.com/file/d/0B3B7tSoW3exfeFg4VnV3TEJ0d0U/view?usp=sharing
+* link to Recipes database: https://drive.google.com/file/d/0B3B7tSoW3exfeFg4VnV3TEJ0d0U/view?usp=sharing <br>
+
 2.Merge Recipes database with existing ASPNETDB.MDF database in App_Data <br>
 ---------
 * Navigate to: C:\Windows\Microsoft.NET\Framework\v4.0.3**** <br>
