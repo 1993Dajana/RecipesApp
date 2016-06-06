@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="background-color:palevioletred">
+            <h1>Header - nav bar</h1>
+            <div>
+    
+        Homepage<br />
+        <br />
+        <asp:LoginView ID="homeView" runat="server">
+            <AnonymousTemplate>
+               Welcome to our recipes site.<br /> 
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Login.aspx">Login</asp:HyperLink>
+            </AnonymousTemplate>
+            <LoggedInTemplate>
+                Hello, 
+                <asp:LoginName ID="loginName" runat="server" />!
+                Good to see you again!<br />
+                <asp:LoginStatus ID="loginStatusUser" runat="server" />
+                <br />
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/User/ChangePassword.aspx">Change password</asp:HyperLink>
+            </LoggedInTemplate>
+            <RoleGroups>
+                <asp:RoleGroup Roles="admin">
+                    <ContentTemplate>
+                        Hello admin :)
+                        <br />
+                        <asp:LinkButton ID="btnManage" runat="server" PostBackUrl="~/Admin/Adminpage.aspx">Manage recipes</asp:LinkButton>
+                        <br />
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutPageUrl="~/Homepage.aspx" />
+                        <br />
+                    </ContentTemplate>
+                </asp:RoleGroup>
+            </RoleGroups>
+        </asp:LoginView>
+    
+        <br />
+        <br />
+    
+    </div>
+        </div>
+        <asp:ContentPlaceHolder ID="mainContent" runat="server">
+            <%--<h2>This is default content</h2>--%>
+        </asp:ContentPlaceHolder>
+        <div style="background-color:blueviolet">
+            <h3>Skopje, Macedonia 2016</h3>
+            <h1>Team Fatties</h1>
+        </div>
+    </form>
+</body>
+</html>
+
+<div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
